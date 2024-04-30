@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:todo_app_using_sqflite/cubit/todo_states.dart';
-import 'package:todo_app_using_sqflite/screens/archieved_tasks_screen.dart';
-import 'package:todo_app_using_sqflite/screens/done_tasks_screen.dart';
-import 'package:todo_app_using_sqflite/screens/new_task_sreen.dart';
+import 'package:todo_app_using_sqflite/screens/Task_Screen/archieved_tasks_screen.dart';
+import 'package:todo_app_using_sqflite/screens/Task_Screen/done_tasks_screen.dart';
+import 'package:todo_app_using_sqflite/screens/Task_Screen/new_task_sreen.dart';
 
 class AppCubit extends Cubit<toDoStates> {
   AppCubit() : super(InitialState());
