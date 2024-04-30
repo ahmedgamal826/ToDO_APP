@@ -3,16 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app_using_sqflite/cubit/todoo_cubit.dart';
 import 'package:todo_app_using_sqflite/cubit/todo_states.dart';
+import 'package:todo_app_using_sqflite/widgets/bottom_navigator_bar.dart';
 import 'package:todo_app_using_sqflite/widgets/floating_actionButton.dart';
-
-class SS extends StatelessWidget {
-  const SS({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -42,32 +34,7 @@ class HomePage extends StatelessWidget {
               fallback: (context) =>
                   const Center(child: CircularProgressIndicator()),
             ),
-            bottomNavigationBar: BottomNavigationBar(
-              currentIndex: cubit.currentIndex,
-              onTap: (index) {
-                cubit.changePage(index);
-              },
-              items: const [
-                BottomNavigationBarItem(
-                    icon: Icon(
-                      Icons.menu,
-                      size: 35,
-                    ),
-                    label: 'Tasks'),
-                BottomNavigationBarItem(
-                    icon: Icon(
-                      Icons.done,
-                      size: 35,
-                    ),
-                    label: 'Done'),
-                BottomNavigationBarItem(
-                    icon: Icon(
-                      Icons.archive,
-                      size: 35,
-                    ),
-                    label: 'Archived'),
-              ],
-            ),
+            bottomNavigationBar: BottomNavigatorBar(context),
             floatingActionButton: CustomFloatingActionBottom(context),
           );
         },
