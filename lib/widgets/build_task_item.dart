@@ -40,6 +40,13 @@ Widget buildTaskItem(Map model, context) => Dismissible(
               onPressed: () {
                 AppCubit.get(context)
                     .updateData(status: 'done', id: model['id']);
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: Text(
+                    'Task Added to Done Tasks',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  duration: Duration(seconds: 3),
+                ));
               },
               icon: const Icon(
                 Icons.done,
@@ -50,6 +57,13 @@ Widget buildTaskItem(Map model, context) => Dismissible(
               onPressed: () {
                 AppCubit.get(context)
                     .updateData(status: 'archieve', id: model['id']);
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: Text(
+                    'Task Added to Archieved Tasks',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  duration: Duration(seconds: 3),
+                ));
               },
               icon: const Icon(
                 Icons.archive_outlined,
