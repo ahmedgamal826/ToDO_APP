@@ -75,5 +75,12 @@ Widget buildTaskItem(Map model, context) => Dismissible(
       ),
       onDismissed: (direction) {
         AppCubit.get(context).deleteData(id: model['id']);
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text(
+            'Task Deleted',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          duration: Duration(seconds: 3),
+        ));
       },
     );
