@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_app_using_sqflite/screens/home_page.dart';
+import 'screens/splash_screen.dart';
 
 void main(context) async {
   runApp(const ToDoApp());
@@ -12,7 +12,7 @@ class ToDoApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: SplashScreen(),
     );
   }
 }
